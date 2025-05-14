@@ -1,0 +1,27 @@
+body {
+            background: linear-gradient(to right, #dfe9f3, #ffffff);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .login-card {
+            background: white;
+            padding: 35px 30px;
+            border-radius: 16px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 420px;
+        }
+        .login-title {
+            text-align: center;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+        .btn-primary {
+            background-color: #1d3557;
+            border: none;
+        }
+        .btn-primary:hover {
+            background-color: #457b9d;
+        }

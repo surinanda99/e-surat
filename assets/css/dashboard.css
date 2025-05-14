@@ -1,0 +1,33 @@
+body {
+            min-height: 100vh;
+            display: flex;
+        }
+        .sidebar {
+            width: 220px;
+            background-color: #f8f9fa;
+            padding-top: 20px;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            border-right: 1px solid #ccc;
+        }
+        .sidebar a {
+            display: block;
+            padding: 15px 20px;
+            text-decoration: none;
+            color: black;
+        }
+        .sidebar a:hover {
+            background-color: #ddd;
+        }
+        .content {
+            margin-left: 220px;
+            padding: 40px;
+            flex-grow: 1;
+        }
+        .form-container {
+            max-width: 700px;
+            margin: auto;
+        }
+        
