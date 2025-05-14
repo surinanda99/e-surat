@@ -34,7 +34,7 @@ CREATE TABLE `approval` (
   `status` enum('approved','rejected') DEFAULT NULL,
   `komentar` text,
   `tanggal` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -47,7 +47,7 @@ CREATE TABLE `arsip_surat` (
   `id_surat` int NOT NULL,
   `tanggal_arsip` datetime DEFAULT NULL,
   `lokasi_file` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -59,7 +59,7 @@ CREATE TABLE `jenis_surat` (
   `id_jenis` int NOT NULL,
   `nama_jenis` varchar(100) NOT NULL,
   `template_surat` varchar(80) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data untuk tabel `jenis_surat`
@@ -82,7 +82,7 @@ CREATE TABLE `log_activity` (
   `role` enum('pegawai','direktur') DEFAULT NULL,
   `aktivitas` text NOT NULL,
   `waktu` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data untuk tabel `log_activity`
@@ -144,7 +144,7 @@ CREATE TABLE `surat` (
   `status_approval` enum('pending','approved','rejected') DEFAULT NULL,
   `catatan` text,
   `tanggal_kirim` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data untuk tabel `surat`
@@ -170,7 +170,7 @@ CREATE TABLE `user` (
   `password` varchar(255) NOT NULL,
   `status` varchar(20) DEFAULT NULL,
   `role` enum('admin','pegawai','direktur') NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data untuk tabel `user`

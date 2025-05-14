@@ -8,8 +8,11 @@ if (isset($_POST['sub'])) {
     $role     = $_POST['jabatan']; 
     $status   = $_POST['status'];  
 
+    // Hash password sebelum simpan
+    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+
     $stmt = $conn->prepare("INSERT INTO user (username, password, status, role) VALUES (?, ?, ?, ?)");
-    $stmt->bind_param("ssss", $username, $password, $status, $role);
+    $stmt->bind_param("ssss", $username, $hashed_password, $status, $role);
 
     if ($stmt->execute()) {
         $_SESSION['success'] = "User berhasil ditambahkan!";

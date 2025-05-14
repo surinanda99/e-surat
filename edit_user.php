@@ -26,7 +26,10 @@ if (isset($_POST['sub'])) {
     $role = htmlspecialchars($_POST['role']); 
     $status = htmlspecialchars($_POST['status']);
 
-    $query = "UPDATE user SET username='$username', password='$new_password', role='$role', status='$status' WHERE id_user='$id_user'";
+    // Hash password sebelum simpan
+    $hashed_password = password_hash($new_password, PASSWORD_DEFAULT);
+
+    $query = "UPDATE user SET username='$username', password='$hashed_password', role='$role', status='$status' WHERE id_user='$id_user'";
     $sql = mysqli_query($conn, $query);
 
     if ($sql) {
