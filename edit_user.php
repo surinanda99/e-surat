@@ -1,7 +1,7 @@
 <?php 
+session_start();
 include "koneksi.php"; 
 include "log_activity.php"; 
-session_start();
 
 if (isset($_GET['id'])) { 
     $id_user = $_GET['id']; 

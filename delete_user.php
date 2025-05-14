@@ -1,6 +1,6 @@
 <?php 
-include "koneksi.php"; 
 session_start();
+include "koneksi.php"; 
 
 if (!isset($_GET['id'])) {
     die("Error. Tidak ada ID user yang dipilih!");
